@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>플레이리스트</title>
+    <style type="text/css">
+        
+        body {
+            height: 100vh;
+            background: url(nbbgg.png) no-repeat center;
+            background-size: cover;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        
+        p {
+            text-align: center;
+            color: #9d9d9d;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 50px;
+            font-family: 'Helvetica', sans-serif;
+        }
+
+        
+        .image-container {
+            display: flex;
+            gap: 20px; 
+        }
+
+        
+        img {
+            width: 150px; 
+            height: auto; 
+            cursor: pointer; 
+            border: 2px solid white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        
+        img:hover {
+            transform: scale(1.1); 
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <p>어떤 음악을 감상해 볼까요?</p>
+
+    
+    <div class="image-container">
+        <img id="sunnyimg" src="sunny.jpg" alt="Sunny Album">
+        <audio id="sunnySnd" src="sunny.mp3"></audio>
+
+        <img id="taiimg" src="tai.jpg" alt="tai Album">
+        <audio id="taiSnd" src="tai.mp3"></audio>
+
+        <img id="npthimg" src="nopath.jpg" alt="No Path Album">
+        <audio id="npthSnd" src="nopath.mp3"></audio>
+    </div>
+
+    <script type="text/javascript">
+        var state = "off";
+
+        
+        sunnyimg.onclick = function() {
+            if(state == "off"){
+                sunnySnd.play();
+                state = "on";
+            } else {
+                sunnySnd.pause();
+                state = "off";
+            }
+        };
+
+        
+        taiimg.onclick = function() {
+            if(state == "off"){
+                taiSnd.play();
+                state = "on";
+            } else {
+                taiSnd.pause();
+                state = "off";
+            }
+        };
+
+        
+        npthimg.onclick = function() {
+            if(state == "off"){
+                npthSnd.play();
+                state = "on";
+            } else {
+                npthSnd.pause();
+                state = "off";
+            }
+        };
+    </script>
+</body>
+</html>
